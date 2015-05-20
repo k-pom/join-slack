@@ -2,6 +2,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import redirect
+import os
 
 from slack import update_team, get_invite
 from data import list_teams, get_team

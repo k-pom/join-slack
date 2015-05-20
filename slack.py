@@ -19,7 +19,7 @@ def get_invite(team, api_key, email):
         if response['error'] == "invalid_email":
             flash("Looks like slack doesn't think your email is good. Want to double check it? ")
         elif response['error'] == 'sent_recently':
-            flash("Looks like we've already sent and invite recently. ")
+            flash("Looks like we've already sent and invite recently. Check your email?")
         else:
             flash("We weren't able to get your invite.")
 

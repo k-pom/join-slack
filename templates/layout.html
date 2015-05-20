@@ -1,0 +1,34 @@
+<!doctype html>
+<html>
+    <head>
+        <link rel="stylesheet" href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href= {{ url_for('static', filename='style.css') }}>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header clearfix">
+                <nav>
+                    <ul class="nav nav-pills pull-right">
+                        <li role="presentation"><a href="/">Team List</a></li>
+                        <li role="presentation"><a href="/add">Add your Team</a></li>
+                        <li role="presentation"><a href="#">About</a></li>
+                    </ul>
+                </nav>
+                <h3 class="text-muted">Join.Slack</h3>
+            </div>
+
+            {% with messages = get_flashed_messages() %}
+              {% if messages %}
+                <div class=bg-danger style='padding:10px; margin: 20px'>
+                {% for message in messages %}
+                  <p>{{ message }}</p>
+                {% endfor %}
+                </div>
+              {% endif %}
+            {% endwith %}
+
+            <div id="content">{% block content %}{% endblock %}</div>
+        </div>
+  </body>
+</html>

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+{% block title %}Add Your Team{% endblock %}
+{% block content %}
+    <form class="form-horizontal" action="/add" method="POST">
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Team name</label>
+            <div class="col-sm-8">
+                <input type="text" name="team" class="form-control" placeholder="my-team" value="{{team}}">
+            </div>
+            <div class='col-sm-2 text-left'>.slack.com</div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">API Key</label>
+            <div class="col-sm-10">
+                <input type="text" name="api_key" class="form-control" placeholder="api-key" value="{{api_key}}">
+            </div>
+            <div class='col-sm-2'></div>
+            <div class='col-sm-10 small'>
+                Check out the bottom of this page:
+                <a href="https://api.slack.com/web" target="_blank">https://api.slack.com/web</a>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Description</label>
+            <div class="col-sm-10">
+                <input type="text" name="description" class="form-control" placeholder="A team to discuss..." value="{{description}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="col-sm-2 control-label">Organization</label>
+            <div class="col-sm-10">
+                <input type="text" name="organization" class="form-control" placeholder="John Smith or NBN" value="{{organization}}">
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-sm-offset-2 col-sm-10">
+                <button type="submit" class="btn btn-primary">Add Team</button>
+            </div>
+        </div>
+    </form>
+
+{% endblock %}

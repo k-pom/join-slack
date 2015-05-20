@@ -1,0 +1,22 @@
+{% extends "layout.html" %}
+{% block title %}Slack Teams{% endblock %}
+{% block content %}
+    <table class='table .table-striped'>
+        <thead>
+            <tr>
+                <th></th>
+                <th>Team Name</th>
+                <th>Team Description</th>
+                <th>Owner / Organization</th>
+            </tr>
+        </thead>
+        {% for team in teams %}
+            <tr>
+                <td><a href="/invite?team={{team['value']['team']}}" class="btn btn-primary">Get Invite</a></td>
+                <td><a href="{{team['value']['url']}}">{{team['value']['url']}}</a></td>
+                <td>{{team['value']['description']}}</td>
+                <td>{{team['value']['organization']}}</td>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

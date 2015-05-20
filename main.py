@@ -7,7 +7,6 @@ from slack import update_team, get_invite
 from data import list_teams, get_team
 
 app = Flask(__name__)
-app.debug = True
 app.secret_key = "super_secret"
 
 @app.route('/')
